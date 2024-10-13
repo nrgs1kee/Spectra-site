@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spectra Services</title>
+    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+      body {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+    </style>
+
+    <script>
+      document.addEventListener('contextmenu', event => {
+        event.preventDefault();
+        showNotification();
+      });
+      document.addEventListener('keydown', function(event) {
+        if (event.key === 'F12' || 
+            (event.ctrlKey && event.shiftKey && event.key === 'I') || 
+            (event.ctrlKey && event.shiftKey && event.key === 'C') || 
+            (event.ctrlKey && event.key === 'U')) {
+          event.preventDefault();
+          showNotification();
+        }
+      });
+      const devToolsCheck = setInterval(function() {
+        if (window.outerWidth - window.innerWidth > 200 || window.outerHeight - window.innerHeight > 200) {
+          showNotification();
+          alert("Developer tools are not allowed on this page!");
+          window.location.href = 'about:blank';
+        }
+      }, 1000);
+      function showNotification() {
+        const notification = document.querySelector('.notification');
+        notification.classList.add('visible');
+        setTimeout(() => {
+          notification.classList.remove('visible');
+        }, 3000);
+      }
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Lynx/Spectra</div>
+        <ul class="nav-links">
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">Download</a></li>
+            <li><a href="https://discord.gg/T7h9nvAQUK" target="_blank">Discord</a></li>
+            <li><a href="https://www.youtube.com/@nrg-s1ke" target="_blank">YouTube</a></li>
+        </ul>
+    </nav>
+
+    <section class="content">
+        <h1>Lynx/Spectra #1 Exploit</h1>
+        <p class="feature">Features <span class="highlight">Level 3</span></p>
+        <p class="description">Lynx/Spectra - Windows #1 Roblox Exploit with fast execution, script injection, and superior features for your needs!</p>
+        <a href="#" class="download-button">Download Lynx/Spectra</a>
+    </section>
+    <div class="notification">No Inspect Element!</div>
+</body>
+</html> 
