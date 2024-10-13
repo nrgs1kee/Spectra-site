@@ -1,2 +1,2 @@
 # Spectra-site
-for Vercel
+https://spectra-services.vercel.app
